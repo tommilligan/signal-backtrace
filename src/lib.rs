@@ -1,5 +1,7 @@
 #![feature(core_intrinsics)]
 
+//! Print a backtrace even when a fatal signal is received.
+
 extern "C" fn handler(sig: i32) {
     let thread = std::thread::current();
     let name = thread.name().unwrap_or("<unnamed>");
@@ -16,6 +18,17 @@ extern "C" fn handler(sig: i32) {
     std::intrinsics::abort();
 }
 
+/// Install global handler.
+///
+/// Will generate a backtrace for signals indicating a fatal crash, then abort.
+///
+/// ```rust
+/// fn main() {
+///     signal_backtrace::install();
+///
+///     // the rest of your code
+/// }
+/// ```
 pub fn install() {
     use sig::{ffi::Sig, signal};
 

@@ -2,6 +2,7 @@
 
 [![Crates.io](https://img.shields.io/crates/v/signal-backtrace)](https://crates.io/crates/signal-backtrace)
 [![GitHub](https://img.shields.io/github/license/tommilligan/signal-backtrace)](https://github.com/tommilligan/signal-backtrace/blob/master/LICENSE)
+[![docs.rs](https://img.shields.io/docsrs/signal-backtrace)](https://docs.rs/signal-backtrace)
 
 Print a backtrace even when a fatal signal is received.
 
