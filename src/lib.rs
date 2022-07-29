@@ -1,16 +1,13 @@
 #![feature(core_intrinsics)]
 
-use backtrace::Backtrace;
-use std::thread;
-
 extern "C" fn handler(sig: i32) {
-    let thread = thread::current();
+    let thread = std::thread::current();
     let name = thread.name().unwrap_or("<unnamed>");
     println!(
-        "Received signal '{}' in thread '{}'. Stack trace\n{:?}",
+        "Received signal '{}' in thread '{}'. Backtrace:\n{:?}",
         sig,
         name,
-        Backtrace::new()
+        backtrace::Backtrace::new()
     );
 
     // Basically `std::intrinsics::abort()` but able to run on stable.

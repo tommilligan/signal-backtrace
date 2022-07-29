@@ -13,3 +13,7 @@ fn main() {
     // the rest of your code
 }
 ```
+
+## Limitations
+
+Only available on nightly.

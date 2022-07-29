@@ -16,5 +16,5 @@ keywords = ["signal", "backtrace", "crash", "abort", "stacktrace"]
 readme = "README.md"
 
 [dependencies]
-backtrace = "0.3.66"
+backtrace = "0.3"
 sig = "1.0.0"
