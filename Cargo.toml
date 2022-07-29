@@ -1,0 +1,20 @@
+[package]
+name = "signal-backtrace"
+version = "0.1.0"
+edition = "2021"
+
+authors = [
+    "Tom Milligan <code@tommilligan.net>",
+]
+description = "Print a backtrace even when a fatal signal is received."
+repository = "https://github.com/tommilligan/signal-backtrace"
+documentation = "https://docs.rs/signal-backtrace"
+
+license = "MIT"
+categories = ["development-tools"]
+keywords = ["signal", "backtrace", "crash", "abort", "stacktrace"]
+readme = "README.md"
+
+[dependencies]
+backtrace = "0.3.66"
+sig = "1.0.0"
